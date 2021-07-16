@@ -1,0 +1,16 @@
+{
+    "name": "youtubedownload",
+    "version": "1.0.0",
+    "description": "automates the process of downloading a video from youtube using the website savenet",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Sebabatso Mashego",
+    "license": "ISC",
+    "dependencies": {
+        "puppeteer": "^9.1.1"
+    },
+    "type": "module"
+}
