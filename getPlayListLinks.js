@@ -1,13 +1,13 @@
 import puppeteer from 'puppeteer';
 
-export default async function getPlayListLinks() {
+// retrieves playlist video links
+export default async function getPlayListLinks(playslist_link) {
     let browser = await puppeteer.launch({ headless: true });
     let page = await browser.newPage();
     let links = [];
+
     try {
-        await page.goto(
-            'https://www.youtube.com/playlist?list=PLDIoUOhQQPlXr63I_vwF9GD8sAKh77dWU'
-        );
+        await page.goto(playslist_link);
 
         links = await page.$$eval('#video-title', (a_tags) =>
             a_tags.map((a_tag) => {
@@ -24,5 +24,3 @@ export default async function getPlayListLinks() {
 
     return links;
 }
-
-// getPlayListLinks().then((links) => console.log(links));
